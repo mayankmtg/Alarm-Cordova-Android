@@ -20,13 +20,8 @@ Technologies Used
 
 ScreenShots
 ----------
-![Image 1](./screenshots/img1.png?raw=true)
-
-![Image 2](./screenshots/img2.png?raw=true)
-
-![Image 3](./screenshots/img3.png?raw=true)
-
-![Image 4](./screenshots/img4.png?raw=true)
+<img src="./screenshots/img1.png" width="225" height="400"> <img src="./screenshots/img2.png" width="225" height="400">
+<img src="./screenshots/img3.png" width="225" height="400"> <img src="./screenshots/img4.png" width="225" height="400">
 
 Android Component Used
 ----------
