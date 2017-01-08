@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="./images/icon.png">
+    <title>Alarm</title>
+
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/cover.css" rel="stylesheet">
+  </head>
+  <body onload="onLoad();">
+    <div class="site-wrapper">
+      <div class="site-wrapper-inner">
+        <div class="cover-container">
+          <div class="masthead clearfix">
+            <div class="inner">
+              <h3 class="masthead-brand"><span class="glyphicon glyphicon-bell"></span> Wake-Me-Up <span class="glyphicon glyphicon-bell"></span></h3>
+              <nav>
+                <ul class="nav masthead-nav">
+                  <li class="active"><a href="index.html">Alarm</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+
+          <div class="inner cover">
+            <h1 class="cover-heading">Specify Time</h1>
+            <br><br>
+            <p class="lead" id="timeDisp"></p>
+
+            <p class="lead" id="getTime">
+              <input type="text" id="hours" name="hours" class="btn btn-default" required> HH 
+              <br><br>
+              <input type="text" name="minutes" id="minutes" class="btn btn-default" required> MM
+
+            </p>
+            <br><br>
+            <p class="lead">
+              <input class="btn btn-lg btn-default" id="set" type="submit" value="Set Alarm" onclick="test()" />
+            </p>
+          </div>
+
+          <div class="mastfoot">
+            <div class="inner">
+              <p>Alarm HTML5 Android Application, by <a href="https://github.com/mayankmtg">Mayank Mohindra</a>.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    <script src="./js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+      var hours;
+      var minutes;
+      var setAlarm;
+      var timeDisp;
+      var getTime;
+      function onLoad(){
+        hours=document.getElementById('hours');
+        minutes=document.getElementById('minutes');
+        getTime=document.getElementById('getTime');
+        setAlarm=document.getElementById('set');
+        timeDisp=document.getElementById('timeDisp');
+      }
+      function test() {
+        getTime.style.visibility="hidden";
+        setAlarm.style.visibility="hidden";
+        timeDisp.innerHTML="Alarm set for "+ hours.value + ":"+ minutes.value;
+        Reminder.addReminder(hours.value,minutes.value);
+     }
+    </script>
+  </body>
+</html>
