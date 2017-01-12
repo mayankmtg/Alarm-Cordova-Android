@@ -28,6 +28,7 @@ public class remindReceiver extends BroadcastReceiver {
 
         //Notification Display
         Intent main_intent= new Intent(context, MainActivity.class);
+        //we can get the url Now over here.....
         PendingIntent main_pending=PendingIntent.getActivity(context, 0, main_intent, 0);
         Notification noti = new Notification.Builder(context)
                 .setSmallIcon(android.R.drawable.ic_popup_reminder)

@@ -38,7 +38,7 @@ public class Reminder  {
         c.set(Calendar.SECOND, 0);
         //Unique Alarm ID creation,
         int alarm_id=0;
-
+        String url="";
         //display("3");
 
         alarm_id=Integer.parseInt(month+""+day+""+mHour+""+mMinute);
@@ -46,6 +46,7 @@ public class Reminder  {
         Intent in=new Intent(context,remindReceiver.class);
         in.putExtra("text", "You have a Reminder!");
         in.putExtra("AlrmId", alarm_id);
+        in.putExtra("url",url );
 
         //display("4");
 
