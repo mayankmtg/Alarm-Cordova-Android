@@ -37,25 +37,37 @@ import org.apache.cordova.*;
 
 public class MainActivity extends CordovaActivity
 {
+    WebView webView;
+    private static String pageUrl;
     @SuppressLint("JavascriptInterface")
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
 
-        WebView webView=new WebView(this);
+        webView=new WebView(this);
         webView.getSettings().setJavaScriptEnabled(true);
 
         //this is the main line of the code in the main activity that adds the adds the javasccript
         // interface, that is maps the function from the javascript (html) to the java code.
         webView.addJavascriptInterface(new Reminder(this), "Reminder");
         webView.setWebChromeClient(new WebChromeClient());
-        webView.loadUrl(launchUrl);
+        if(pageUrl==null){
+            pageUrl=launchUrl;
+        }
+        webView.loadUrl(pageUrl);
+        Toast.makeText(this, pageUrl, Toast.LENGTH_LONG).show();
         // Set by <content src="index.html" /> in config.xml
 
         setContentView(webView);
+    }
+    protected void onStart(){
+        super.onStart();
+        webView.loadUrl(pageUrl);
         
-
+    }
+    public void setUrl(String url){
+        pageUrl="file:///android_asset/www/"+url;
     }
 }
 

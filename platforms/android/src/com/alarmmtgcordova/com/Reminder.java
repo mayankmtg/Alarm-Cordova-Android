@@ -38,7 +38,7 @@ public class Reminder  {
         c.set(Calendar.SECOND, 0);
         //Unique Alarm ID creation,
         int alarm_id=0;
-        String url="";
+        String url="home.html";
         //display("3");
 
         alarm_id=Integer.parseInt(month+""+day+""+mHour+""+mMinute);
